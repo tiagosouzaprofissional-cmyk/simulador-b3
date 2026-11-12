@@ -1,0 +1,36 @@
+name: Atualizar Cotações B3
+
+on:
+  schedule:
+    # Roda de segunda a sexta às 21:30 UTC (18:30 no horário de Brasília, após fechar a B3)
+    - cron: '30 21 * * 1-5'
+  workflow_dispatch: # Permite rodar manualmente na aba Actions do GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar código do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar bibliotecas
+        run: pip install yfinance pandas
+
+      - name: Executar script de cotações
+        run: python atualizar_cotacoes.py
+
+      - name: Salvar cotacoes.json atualizado no repositório
+        run: |
+          git config --global user.name "Robô B3"
+          git config --global user.email "actions@github.com"
+          git add cotacoes.json
+          git diff --staged --quiet || git commit -m "Atualização automática de cotações B3"
+          git push
