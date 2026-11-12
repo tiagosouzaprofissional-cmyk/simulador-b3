@@ -2,9 +2,8 @@ name: Atualizar Cotações B3
 
 on:
   schedule:
-    # Roda de segunda a sexta às 21:30 UTC (18:30 no horário de Brasília, após fechar a B3)
     - cron: '30 21 * * 1-5'
-  workflow_dispatch: # Permite rodar manualmente na aba Actions do GitHub
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -32,5 +31,4 @@ jobs:
           git config --global user.name "Robô B3"
           git config --global user.email "actions@github.com"
           git add cotacoes.json
-          git diff --staged --quiet || git commit -m "Atualização automática de cotações B3"
-          git push
+          git diff --staged --quiet || (git commit -m "Atualização automática de cotações B3" && git pull --rebase origin main && git push origin main)
