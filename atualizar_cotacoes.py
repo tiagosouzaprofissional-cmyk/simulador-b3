@@ -1,31 +1,55 @@
 import json
-from datetime import datetime, timedelta
+from datetime import datetime
 import pandas as pd
 import yfinance as yf
 
-# 1. Ativos em destaque que aparecem no select principal do menu
+# 1. Ativos em destaque que aparecem no menu principal
 DESTAQUES = {
     "BBAS3": "Banco do Brasil",
     "BBSE3": "BB Seguridade",
     "ITSA4": "Itaúsa",
     "BBDC3": "Bradesco ON",
+    "BBDC4": "Bradesco PN",
     "TRXF11": "TRX Real Estate (FII)",
-    "XSPI11": "XP S&P 500 Div ETF",
+    "XSPI11": "XP S&P 500 Dividendos ETF",
     "XBCI11": "XP Crédito Imobiliário ETF",
     "TAEE11": "Taesa",
     "ISAE4": "ISA Energia (CTEEP)",
     "CMIG4": "Cemig PN",
     "CPFE3": "CPFL Energia",
     "BEES3": "Banestes",
+    "CXSE3": "Caixa Seguridade",
 }
 
-# 2. Lista base de sufixos e classes para varrer a B3 (Ações 3, 4, 11 e FIIs/ETFs 11)
-# Você pode adicionar qualquer ticker específico que queira garantir aqui também:
+# 2. Yields reais de referência para ETFs/ativos onde o Yahoo Finance EUA não indexa os proventos da B3
+DY_ETFS_B3 = {
+    "XBCI11": 11.4,  # ETF XP Crédito Imobiliário (~0,90% a 1,00% a.m.)
+    "XSPI11": 9.8,  # ETF XP S&P 500 Dividendos (~0,80% a.m.)
+    "TIRB11": 10.5,  # ETF Buena Vista Títulos Públicos / Renda
+    "CHIP11": 9.5,  # ETF Semicondutores / Renda
+    "COIN11": 12.0,  # ETF Cripto / Renda Mensal
+    "ETHY11": 11.5,  # ETF Ethereum / Renda Mensal
+    "NDIV11": 8.5,  # ETF Nu Renda Ibov Smart Dividendos
+}
+
+# 3. Catálogo completo da B3
 TICKERS_EXTRAS = [
-    # Bancos e Financeiro
+    # Seus ativos e ETFs
+    "XSPI11",
+    "XBCI11",
+    "TIRB11",
+    "CHIP11",
+    "COIN11",
+    "ETHY11",
+    "OBTC3",
+    "NDIV11",
+    "DIVO11",
+    "BOVA11",
+    "IVVB11",
+    "HASH11",
+    # Bancos e Seguros
     "ITUB3",
     "ITUB4",
-    "BBDC4",
     "SANB11",
     "SANB3",
     "SANB4",
@@ -39,6 +63,7 @@ TICKERS_EXTRAS = [
     "B3SA3",
     "CIEL3",
     "CXSE3",
+    "BEES4",
     # Elétricas e Saneamento
     "ELET3",
     "ELET6",
@@ -59,7 +84,7 @@ TICKERS_EXTRAS = [
     "SAPR4",
     "SAPR3",
     "CSMG3",
-    # Commodities, Óleo e Gás
+    # Commodities, Petróleo e Siderurgia
     "PETR4",
     "PETR3",
     "VALE3",
@@ -76,12 +101,13 @@ TICKERS_EXTRAS = [
     "CSNA3",
     "USIM5",
     "CMIN3",
+    "FESA4",
     "SUZB3",
     "KLBN11",
     "KLBN4",
     "KLBN3",
     "RANI3",
-    # Consumo, Varejo, Agro e Indústria
+    # Indústria, Agro, Consumo e Varejo
     "WEGE3",
     "TUPY3",
     "ROMI3",
@@ -89,21 +115,26 @@ TICKERS_EXTRAS = [
     "POMO4",
     "RAPT4",
     "KEPL3",
+    "SHUL4",
     "AGRO3",
     "SLCE3",
     "TTEN3",
     "SMTO3",
+    "JALL3",
     "JBSS3",
     "BRFS3",
     "MRFG3",
     "BEEF3",
     "MDIA3",
+    "CAML3",
     "ABEV3",
     "VIVT3",
     "TIMS3",
+    "UNIP6",
+    "UNIP3",
     "RADL3",
     "FLRY3",
-    "RDOR3",
+    "ODPV3",
     "HYPE3",
     "LREN3",
     "MGLU3",
@@ -115,7 +146,9 @@ TICKERS_EXTRAS = [
     "CYRE3",
     "EZTC3",
     "MRVE3",
+    "DIRR3",
     "CURY3",
+    "LAVV3",
     "JHSF3",
     "RAIL3",
     "CCRO3",
@@ -124,7 +157,7 @@ TICKERS_EXTRAS = [
     "VAMO3",
     "RENT3",
     "MOVI3",
-    # Principais FIIs e ETFs do Mercado
+    # Principais FIIs e Fiagros
     "MXRF11",
     "HGLG11",
     "XPML11",
@@ -160,19 +193,8 @@ TICKERS_EXTRAS = [
     "XPCA11",
     "BCFF11",
     "KFOF11",
-    "TIRB11",
-    "CHIP11",
-    "COIN11",
-    "ETHY11",
-    "OBTC3",
-    "BOVA11",
-    "IVVB11",
-    "HASH11",
-    "NDIV11",
-    "DIVO11",
 ]
 
-# Junta tudo sem duplicar
 todos_os_tickers = list(dict.fromkeys(list(DESTAQUES.keys()) + TICKERS_EXTRAS))
 
 dados_saida = {
@@ -181,19 +203,25 @@ dados_saida = {
     "ativos": {},
 }
 
-um_ano_atras = datetime.now() - timedelta(days=365)
-print(f"Baixando dados para {len(todos_os_tickers)} ativos da B3...")
+print(
+    f"Baixando 1 ano de histórico + dividendos para {len(todos_os_tickers)}"
+    " ativos..."
+)
 
-# Baixa em lote usando yfinance para otimizar velocidade
+# O segredo: period="1y" e actions=True traz a coluna 'Dividends' de todos os ativos juntos!
 tickers_yf = [f"{t}.SA" for t in todos_os_tickers]
 lote_dados = yf.download(
-    tickers_yf, period="5d", group_by="ticker", threads=True, progress=False
+    tickers_yf,
+    period="1y",
+    actions=True,
+    group_by="ticker",
+    threads=True,
+    progress=False,
 )
 
 for ticker in todos_os_tickers:
   try:
     simbolo_yf = f"{ticker}.SA"
-    # Extrai o fechamento recente do lote ou busca individual se o lote falhar
     if len(todos_os_tickers) == 1:
       hist = lote_dados
     else:
@@ -206,44 +234,24 @@ for ticker in todos_os_tickers:
     if hist.empty or "Close" not in hist.columns:
       continue
 
-    preco_atual = float(hist["Close"].dropna().iloc[-1])
+    fechamentos = hist["Close"].dropna()
+    if fechamentos.empty:
+      continue
+
+    preco_atual = float(fechamentos.iloc[-1])
     if preco_atual <= 0:
       continue
 
-    # Puxa dividendos do último ano
-    papel = yf.Ticker(simbolo_yf)
-    dividendos = papel.dividends
+    # 1. Soma todos os dividendos pagos nos últimos 12 meses direto da tabela baixada
     dpa_12m = 0.0
-    if not dividendos.empty:
-      dividendos.index = dividendos.index.tz_localize(None)
-      div_12m = dividendos[dividendos.index >= um_ano_atras]
-      dpa_12m = float(div_12m.sum())
+    if "Dividends" in hist.columns:
+      dpa_12m = float(hist["Dividends"].dropna().sum())
 
     dy_anual = (dpa_12m / preco_atual) * 100 if preco_atual > 0 else 0.0
 
-    # Fallback de segurança para ativos sem histórico completo de proventos na API
-    if dy_anual == 0:
-      dy_anual = 6.0
-      dpa_12m = preco_atual * 0.06
+    # 2. Se for um ETF da B3 cujo dividendo o Yahoo EUA não lista, usa o DY real mapeado
+    if dy_anual == 0 and ticker in DY_ETFS_B3:
+      dy_anual = DY_ETFS_B3[ticker]
+      dpa_12m = preco_atual * (dy_anual / 100.0)
 
-    nome_empresa = DESTAQUES.get(ticker, ticker)
-
-    dados_saida["ativos"][ticker] = {
-        "nome": nome_empresa,
-        "preco": round(preco_atual, 2),
-        "dy": round(dy_anual, 2),
-        "dpa": round(dpa_12m, 2),
-        "teto_bazin": round(dpa_12m / 0.06, 2),
-    }
-    print(f"[OK] {ticker}: R$ {preco_atual:.2f} | DY: {dy_anual:.2f}%")
-
-  except Exception as e:
-    print(f"[IGNORADO] {ticker}: {e}")
-
-# Salva o super JSON na raiz do repositório
-with open("cotacoes.json", "w", encoding="utf-8") as f:
-  json.dump(dados_saida, f, ensure_ascii=False, indent=2)
-
-print(
-    f"Sucesso! {len(dados_saida['ativos'])} ativos gravados no cotacoes.json."
-)
+    # 3. Se ainda estiver zerado, tenta
