@@ -1,0 +1,89 @@
+{
+  "atualizado_em": "12/11/2026 13:31",
+  "ativos": {
+    "BBAS3": {
+      "nome": "Banco do Brasil",
+      "preco": 15.09,
+      "dy": 4.34,
+      "dpa": 0.65,
+      "teto_bazin": 10.92
+    },
+    "BBSE3": {
+      "nome": "BB Seguridade",
+      "preco": 35.95,
+      "dy": 12.77,
+      "dpa": 4.59,
+      "teto_bazin": 76.5
+    },
+    "ITSA4": {
+      "nome": "Itaúsa",
+      "preco": 13.39,
+      "dy": 8.42,
+      "dpa": 1.13,
+      "teto_bazin": 18.8
+    },
+    "BBDC3": {
+      "nome": "Bradesco ON",
+      "preco": 13.01,
+      "dy": 11.27,
+      "dpa": 1.47,
+      "teto_bazin": 24.43
+    },
+    "BBDC4": {
+      "nome": "Bradesco PN",
+      "preco": 14.0,
+      "dy": 11.52,
+      "dpa": 1.61,
+      "teto_bazin": 26.87
+    },
+    "BEES3": {
+      "nome": "Banestes",
+      "preco": 9.39,
+      "dy": 9.25,
+      "dpa": 0.87,
+      "teto_bazin": 14.48
+    },
+    "TAEE11": {
+      "nome": "Taesa",
+      "preco": 41.2,
+      "dy": 7.3,
+      "dpa": 3.01,
+      "teto_bazin": 50.11
+    },
+    "ISAE4": {
+      "nome": "ISA Energia (ex-TRPL4)",
+      "preco": 26.49,
+      "dy": 7.56,
+      "dpa": 2.0,
+      "teto_bazin": 33.39
+    },
+    "CPFE3": {
+      "nome": "CPFL Energia",
+      "preco": 44.27,
+      "dy": 5.88,
+      "dpa": 2.6,
+      "teto_bazin": 43.39
+    },
+    "CMIG4": {
+      "nome": "Cemig",
+      "preco": 10.63,
+      "dy": 10.72,
+      "dpa": 1.14,
+      "teto_bazin": 18.99
+    },
+    "TRXF11": {
+      "nome": "TRX Real Estate (FII)",
+      "preco": 55.87,
+      "dy": 19.46,
+      "dpa": 10.87,
+      "teto_bazin": 181.17
+    },
+    "CXSE3": {
+      "nome": "Caixa Seguridade",
+      "preco": 21.58,
+      "dy": 6.4,
+      "dpa": 1.38,
+      "teto_bazin": 23.04
+    }
+  }
+}
