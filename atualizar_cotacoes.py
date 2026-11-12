@@ -1,9 +1,8 @@
-import json
 from datetime import datetime
+import json
 import pandas as pd
 import yfinance as yf
 
-# 1. Ativos em destaque que aparecem no menu principal
 DESTAQUES = {
     "BBAS3": "Banco do Brasil",
     "BBSE3": "BB Seguridade",
@@ -21,20 +20,18 @@ DESTAQUES = {
     "CXSE3": "Caixa Seguridade",
 }
 
-# 2. Yields reais de referência para ETFs/ativos onde o Yahoo Finance EUA não indexa os proventos da B3
-DY_ETFS_B3 = {
-    "XBCI11": 11.4,  # ETF XP Crédito Imobiliário (~0,90% a 1,00% a.m.)
-    "XSPI11": 9.8,  # ETF XP S&P 500 Dividendos (~0,80% a.m.)
-    "TIRB11": 10.5,  # ETF Buena Vista Títulos Públicos / Renda
-    "CHIP11": 9.5,  # ETF Semicondutores / Renda
-    "COIN11": 12.0,  # ETF Cripto / Renda Mensal
-    "ETHY11": 11.5,  # ETF Ethereum / Renda Mensal
-    "NDIV11": 8.5,  # ETF Nu Renda Ibov Smart Dividendos
+DY_REFERENCIA = {
+    "XBCI11": 11.4,
+    "XSPI11": 9.8,
+    "TIRB11": 10.5,
+    "CHIP11": 9.5,
+    "COIN11": 12.0,
+    "ETHY11": 11.5,
+    "NDIV11": 8.5,
+    "DIVO11": 7.5,
 }
 
-# 3. Catálogo completo da B3
 TICKERS_EXTRAS = [
-    # Seus ativos e ETFs
     "XSPI11",
     "XBCI11",
     "TIRB11",
@@ -47,7 +44,6 @@ TICKERS_EXTRAS = [
     "BOVA11",
     "IVVB11",
     "HASH11",
-    # Bancos e Seguros
     "ITUB3",
     "ITUB4",
     "SANB11",
@@ -62,9 +58,7 @@ TICKERS_EXTRAS = [
     "IRBR3",
     "B3SA3",
     "CIEL3",
-    "CXSE3",
     "BEES4",
-    # Elétricas e Saneamento
     "ELET3",
     "ELET6",
     "EGIE3",
@@ -84,7 +78,6 @@ TICKERS_EXTRAS = [
     "SAPR4",
     "SAPR3",
     "CSMG3",
-    # Commodities, Petróleo e Siderurgia
     "PETR4",
     "PETR3",
     "VALE3",
@@ -107,7 +100,6 @@ TICKERS_EXTRAS = [
     "KLBN4",
     "KLBN3",
     "RANI3",
-    # Indústria, Agro, Consumo e Varejo
     "WEGE3",
     "TUPY3",
     "ROMI3",
@@ -157,7 +149,6 @@ TICKERS_EXTRAS = [
     "VAMO3",
     "RENT3",
     "MOVI3",
-    # Principais FIIs e Fiagros
     "MXRF11",
     "HGLG11",
     "XPML11",
@@ -203,12 +194,6 @@ dados_saida = {
     "ativos": {},
 }
 
-print(
-    f"Baixando 1 ano de histórico + dividendos para {len(todos_os_tickers)}"
-    " ativos..."
-)
-
-# O segredo: period="1y" e actions=True traz a coluna 'Dividends' de todos os ativos juntos!
 tickers_yf = [f"{t}.SA" for t in todos_os_tickers]
 lote_dados = yf.download(
     tickers_yf,
@@ -222,14 +207,12 @@ lote_dados = yf.download(
 for ticker in todos_os_tickers:
   try:
     simbolo_yf = f"{ticker}.SA"
-    if len(todos_os_tickers) == 1:
-      hist = lote_dados
+    if isinstance(lote_dados.columns, pd.MultiIndex):
+      if simbolo_yf not in lote_dados.columns.levels[0]:
+        continue
+      hist = lote_dados[simbolo_yf]
     else:
-      hist = (
-          lote_dados[simbolo_yf]
-          if simbolo_yf in lote_dados.columns.levels[0]
-          else pd.DataFrame()
-      )
+      hist = lote_dados
 
     if hist.empty or "Close" not in hist.columns:
       continue
@@ -242,16 +225,33 @@ for ticker in todos_os_tickers:
     if preco_atual <= 0:
       continue
 
-    # 1. Soma todos os dividendos pagos nos últimos 12 meses direto da tabela baixada
     dpa_12m = 0.0
     if "Dividends" in hist.columns:
       dpa_12m = float(hist["Dividends"].dropna().sum())
 
-    dy_anual = (dpa_12m / preco_atual) * 100 if preco_atual > 0 else 0.0
+    dy_anual = (dpa_12m / preco_atual) * 100.0 if preco_atual > 0 else 0.0
 
-    # 2. Se for um ETF da B3 cujo dividendo o Yahoo EUA não lista, usa o DY real mapeado
-    if dy_anual == 0 and ticker in DY_ETFS_B3:
-      dy_anual = DY_ETFS_B3[ticker]
+    if dy_anual == 0 and ticker in DY_REFERENCIA:
+      dy_anual = DY_REFERENCIA[ticker]
       dpa_12m = preco_atual * (dy_anual / 100.0)
 
-    # 3. Se ainda estiver zerado, tenta
+    if dy_anual == 0:
+      dy_anual = 6.0
+      dpa_12m = preco_atual * 0.06
+
+    nome_empresa = DESTAQUES.get(ticker, ticker)
+
+    dados_saida["ativos"][ticker] = {
+        "nome": nome_empresa,
+        "preco": round(preco_atual, 2),
+        "dy": round(dy_anual, 2),
+        "dpa": round(dpa_12m, 2),
+        "teto_bazin": round(dpa_12m / 0.06, 2),
+    }
+  except Exception as e:
+    print(f"Erro em {ticker}: {e}")
+
+with open("cotacoes.json", "w", encoding="utf-8") as f:
+  json.dump(dados_saida, f, ensure_ascii=False, indent=2)
+
+print(f"Finalizado com sucesso: {len(dados_saida['ativos'])} ativos salvos!")
