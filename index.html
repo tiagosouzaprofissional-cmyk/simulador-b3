@@ -1,378 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulador Renda+ de Ações B3</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 10px;
-      background: transparent;
-    }
-
-    #simulador-acoes-wrapper {
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      max-width: 540px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-      border: 1px solid #e2e8f0;
-      overflow: hidden;
-      color: #1e293b;
-    }
-
-    .sim-header {
-      background: #0b2545;
-      color: #ffffff;
-      padding: 24px 20px;
-      text-align: center;
-      border-bottom: 4px solid #76b82a;
-    }
-
-    .sim-header h2 {
-      margin: 0 0 8px 0;
-      font-size: 22px;
-      font-weight: 700;
-      color: #ffffff;
-    }
-
-    .sim-header p {
-      margin: 0;
-      font-size: 14px;
-      color: #cbd5e1;
-      line-height: 1.4;
-    }
-
-    .sim-status-bar {
-      background: #f1f5f9;
-      font-size: 11px;
-      color: #475569;
-      text-align: center;
-      padding: 6px 12px;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    .sim-body {
-      padding: 24px 20px;
-    }
-
-    .sim-field {
-      margin-bottom: 18px;
-    }
-
-    .sim-field label {
-      display: block;
-      font-size: 14px;
-      font-weight: 600;
-      color: #475569;
-      margin-bottom: 6px;
-    }
-
-    .sim-input-group {
-      position: relative;
-      display: flex;
-      align-items: center;
-      background: #f1f5f9;
-      border-radius: 6px;
-      border-bottom: 2px solid #94a3b8;
-      transition: all 0.2s ease;
-    }
-
-    .sim-input-group:focus-within {
-      background: #e8f5e9;
-      border-bottom-color: #2e7d32;
-    }
-
-    .sim-input-group input,
-    .sim-input-group select {
-      width: 100%;
-      border: none;
-      background: transparent;
-      padding: 12px 14px;
-      font-size: 16px;
-      font-weight: 600;
-      color: #0f172a;
-      outline: none;
-      appearance: none;
-    }
-
-    .sim-prefix, .sim-suffix {
-      padding: 0 12px;
-      font-size: 14px;
-      font-weight: 600;
-      color: #64748b;
-      user-select: none;
-    }
-
-    .sim-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .sim-badge-info {
-      display: flex;
-      justify-content: space-between;
-      background: #f8fafc;
-      border: 1px dashed #cbd5e1;
-      border-radius: 8px;
-      padding: 10px 14px;
-      margin-bottom: 18px;
-      font-size: 13px;
-    }
-
-    .sim-badge-info span strong {
-      color: #0b2545;
-    }
-
-    .sim-btn {
-      width: 100%;
-      padding: 15px;
-      background: #ffffff;
-      color: #2e7d32;
-      border: 2px solid #2e7d32;
-      border-radius: 50px;
-      font-size: 15px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      margin-top: 8px;
-    }
-
-    .sim-btn:hover {
-      background: #2e7d32;
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(46, 125, 50, 0.3);
-    }
-
-    .sim-results {
-      display: none;
-      margin-top: 24px;
-      padding-top: 24px;
-      border-top: 2px dashed #e2e8f0;
-      animation: fadeIn 0.35s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .sim-res-highlight {
-      background: linear-gradient(135deg, #0b2545 0%, #133b6e 100%);
-      color: #ffffff;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      margin-bottom: 16px;
-    }
-
-    .sim-res-highlight span {
-      display: block;
-      font-size: 13px;
-      color: #cbd5e1;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .sim-res-highlight strong {
-      display: block;
-      font-size: 28px;
-      color: #8ce99a;
-      margin: 6px 0;
-    }
-
-    .sim-res-highlight small {
-      font-size: 12px;
-      color: #e2e8f0;
-    }
-
-    .sim-cards-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .sim-card {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 12px;
-      text-align: center;
-    }
-
-    .sim-card span {
-      display: block;
-      font-size: 12px;
-      color: #64748b;
-      margin-bottom: 4px;
-    }
-
-    .sim-card strong {
-      font-size: 16px;
-      color: #0f172a;
-    }
-
-    .sim-note {
-      font-size: 12px;
-      color: #64748b;
-      background: #f1f5f9;
-      padding: 12px;
-      border-radius: 8px;
-      line-height: 1.5;
-    }
-
-    @media (max-width: 480px) {
-      .sim-row, .sim-cards-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<div id="simulador-acoes-wrapper">
-  <div class="sim-header">
-    <h2>Simule sua Aposentadoria com Ações</h2>
-    <p>Planeje sua carteira previdenciária focada em dividendos e descubra quantas ações acumular</p>
-  </div>
-
-  <div class="sim-status-bar" id="status-cotacoes">
-    ⏳ Sincronizando cotações da B3...
-  </div>
-
-  <div class="sim-body">
-    <div class="sim-field">
-      <label for="sim-ticker-select">Escolha o Ativo da B3 (ou personalize) *</label>
-      <div class="sim-input-group">
-        <select id="sim-ticker-select" onchange="atualizarDadosAtivo()">
-          <option value="BBAS3" data-preco="16.50" data-dy="9.5">BBAS3 - Banco do Brasil</option>
-          <option value="BBSE3" data-preco="34.20" data-dy="9.8">BBSE3 - BB Seguridade</option>
-          <option value="ITSA4" data-preco="10.40" data-dy="8.2">ITSA4 - Itaúsa</option>
-          <option value="BBDC3" data-preco="12.80" data-dy="8.5">BBDC3 - Bradesco ON</option>
-          <option value="BEES3" data-preco="8.90" data-dy="8.8">BEES3 - Banestes</option>
-          <option value="TAEE11" data-preco="34.50" data-dy="9.2">TAEE11 - Taesa</option>
-          <option value="ISAE4" data-preco="24.80" data-dy="8.5">ISAE4 - ISA Energia</option>
-          <option value="CPFE3" data-preco="32.90" data-dy="9.0">CPFE3 - CPFL Energia</option>
-          <option value="CMIG4" data-preco="11.20" data-dy="9.4">CMIG4 - Cemig</option>
-          <option value="TRXF11" data-preco="100.50" data-dy="11.2">TRXF11 - TRX Real Estate</option>
-          <option value="CUSTOM" data-preco="20.00" data-dy="6.0">✏️ Digitar outro Ticker...</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="sim-field" id="box-custom-ticker" style="display:none;">
-      <label for="sim-custom-name">Código do Ticker (ex: PETR4, VALE3, CXSE3)</label>
-      <div class="sim-input-group">
-        <input type="text" id="sim-custom-name" placeholder="Ex: CXSE3" value="CXSE3" style="text-transform:uppercase;">
-      </div>
-    </div>
-
-    <div class="sim-row">
-      <div class="sim-field">
-        <label for="sim-preco">Cotação Atual (R$) *</label>
-        <div class="sim-input-group">
-          <span class="sim-prefix">R$</span>
-          <input type="number" id="sim-preco" step="0.01" value="16.50" oninput="atualizarPrecoTeto()">
-        </div>
-      </div>
-      <div class="sim-field">
-        <label for="sim-dy">Dividend Yield Anual (%) *</label>
-        <div class="sim-input-group">
-          <input type="number" id="sim-dy" step="0.1" value="9.5" oninput="atualizarPrecoTeto()">
-          <span class="sim-suffix">% a.a.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="sim-badge-info" id="sim-bazin-box">
-      <span>Dividendo/Ação: <strong id="lbl-dpa">R$ 1,57/ano</strong></span>
-      <span>Preço-Teto Bazin (6%): <strong id="lbl-teto">R$ 26,13</strong></span>
-    </div>
-
-    <div class="sim-row">
-      <div class="sim-field">
-        <label for="sim-idade-atual">Qual é a sua idade? *</label>
-        <div class="sim-input-group">
-          <input type="number" id="sim-idade-atual" value="30" min="1" max="99">
-          <span class="sim-suffix">anos</span>
-        </div>
-      </div>
-      <div class="sim-field">
-        <label for="sim-idade-aposentar">Aposentar com quantos anos? *</label>
-        <div class="sim-input-group">
-          <input type="number" id="sim-idade-aposentar" value="60" min="2" max="100">
-          <span class="sim-suffix">anos</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="sim-field">
-      <label for="sim-renda">Qual renda extra mensal de dividendos você deseja? *</label>
-      <div class="sim-input-group">
-        <span class="sim-prefix">R$</span>
-        <input type="number" id="sim-renda" step="100" value="2000">
-      </div>
-    </div>
-
-    <div class="sim-field">
-      <label for="sim-inicial">Deseja fazer algum investimento inicial? (opcional)</label>
-      <div class="sim-input-group">
-        <span class="sim-prefix">R$</span>
-        <input type="number" id="sim-inicial" step="100" value="0">
-      </div>
-    </div>
-
-    <button type="button" class="sim-btn" onclick="calcularSimulacaoAcoes()">SIMULAR</button>
-
-    <div class="sim-results" id="sim-results-area">
-      <div class="sim-res-highlight">
-        <span>Meta Acumulada para Viver de Renda</span>
-        <strong id="res-cotas">0 ações</strong>
-        <small id="res-patrimonio">Patrimônio estimado: R$ 0,00</small>
-      </div>
-
-      <div class="sim-cards-grid">
-        <div class="sim-card">
-          <span>Aporte Mensal Necessário</span>
-          <strong id="res-aporte-mensal" style="color:#2e7d32;">R$ 0,00 / mês</strong>
-        </div>
-        <div class="sim-card">
-          <span>Ações para Comprar / Mês</span>
-          <strong id="res-acoes-mes">0 cotas / mês</strong>
-        </div>
-        <div class="sim-card">
-          <span>Total Tirado do Bolso</span>
-          <strong id="res-total-bolso">R$ 0,00</strong>
-        </div>
-        <div class="sim-card">
-          <span>Pago pelos Dividendos (Bola de Neve)</span>
-          <strong id="res-efeito-bola" style="color:#0b2545;">R$ 0,00</strong>
-        </div>
-      </div>
-
-      <div class="sim-note" id="res-resumo-texto"></div>
-    </div>
-  </div>
-</div>
-
 <script>
-  // Carrega o JSON gerado pelo Python no GitHub
+  let bancoCotacoesJson = {};
+
   async function carregarCotacoesGitHub() {
     try {
       const resposta = await fetch('./cotacoes.json?t=' + new Date().getTime());
       if (!resposta.ok) throw new Error('JSON ainda não gerado');
       const dados = await resposta.json();
+      bancoCotacoesJson = dados.ativos || {};
+      const listaPrincipais = dados.principais || Object.keys(bancoCotacoesJson).slice(0, 12);
 
       const select = document.getElementById('sim-ticker-select');
       select.innerHTML = '';
 
-      for (const [ticker, info] of Object.entries(dados.ativos)) {
+      // 1. Preenche o Select apenas com os ativos principais
+      for (const ticker of listaPrincipais) {
+        const info = bancoCotacoesJson[ticker];
+        if (!info) continue;
         const opt = document.createElement('option');
         opt.value = ticker;
         opt.setAttribute('data-preco', info.preco);
@@ -385,17 +28,48 @@
       optCustom.value = 'CUSTOM';
       optCustom.setAttribute('data-preco', '20.00');
       optCustom.setAttribute('data-dy', '6.0');
-      optCustom.textContent = '✏️ Digitar outro Ticker...';
+      optCustom.textContent = '✏️ Digitar outro Ticker da B3...';
       select.appendChild(optCustom);
 
+      // 2. Cria uma lista de sugestões (datalist) com os 150+ ativos do Python
+      let datalist = document.getElementById('lista-tickers-b3');
+      if (!datalist) {
+        datalist = document.createElement('datalist');
+        datalist.id = 'lista-tickers-b3';
+        document.body.appendChild(datalist);
+      }
+      datalist.innerHTML = '';
+      for (const [ticker, info] of Object.entries(bancoCotacoesJson)) {
+        const item = document.createElement('option');
+        item.value = ticker;
+        item.label = `R$ ${info.preco.toFixed(2)} | DY: ${info.dy.toFixed(1)}%`;
+        datalist.appendChild(item);
+      }
+
+      const inputCustom = document.getElementById('sim-custom-name');
+      inputCustom.setAttribute('list', 'lista-tickers-b3');
+      inputCustom.setAttribute('oninput', 'puxarTickerDoPython()');
+
       document.getElementById('status-cotacoes').innerHTML = 
-        `🟢 Dados da B3 atualizados automaticamente em: <strong>${dados.atualizado_em}</strong>`;
+        `🟢 Python GitHub: <strong>${Object.keys(bancoCotacoesJson).length} ativos B3</strong> atualizados em <strong>${dados.atualizado_em}</strong>`;
 
       atualizarDadosAtivo();
     } catch (erro) {
       document.getElementById('status-cotacoes').innerHTML = 
         `⚪ Modo manual ativo (valores de referência editáveis)`;
       atualizarDadosAtivo();
+    }
+  }
+
+  // Puxa instantaneamente do arquivo gerado pelo Python no GitHub ao digitar!
+  function puxarTickerDoPython() {
+    const ticker = document.getElementById('sim-custom-name').value.trim().toUpperCase();
+    const info = bancoCotacoesJson[ticker];
+
+    if (info) {
+      document.getElementById('sim-preco').value = info.preco.toFixed(2);
+      document.getElementById('sim-dy').value = info.dy.toFixed(1);
+      atualizarPrecoTeto();
     }
   }
 
@@ -419,13 +93,13 @@
 
     if (select.value === 'CUSTOM') {
       boxCustom.style.display = 'block';
+      puxarTickerDoPython();
     } else {
       boxCustom.style.display = 'none';
+      document.getElementById('sim-preco').value = parseFloat(option.getAttribute('data-preco')).toFixed(2);
+      document.getElementById('sim-dy').value = parseFloat(option.getAttribute('data-dy')).toFixed(1);
+      atualizarPrecoTeto();
     }
-
-    document.getElementById('sim-preco').value = parseFloat(option.getAttribute('data-preco')).toFixed(2);
-    document.getElementById('sim-dy').value = parseFloat(option.getAttribute('data-dy')).toFixed(1);
-    atualizarPrecoTeto();
     enviarAlturaParaBlogger();
   }
 
@@ -442,7 +116,7 @@
   function calcularSimulacaoAcoes() {
     var select = document.getElementById('sim-ticker-select');
     var ticker = select.value === 'CUSTOM' 
-      ? (document.getElementById('sim-custom-name').value.toUpperCase() || 'AÇÃO')
+      ? (document.getElementById('sim-custom-name').value.trim().toUpperCase() || 'ATIVO')
       : select.value;
 
     var preco = parseFloat(document.getElementById('sim-preco').value) || 0;
@@ -482,15 +156,15 @@
     var totalTiradoDoBolso = aporteInicial + (aporteMensalNecessario * meses);
     var pagoPelosDividendos = Math.max(0, patrimonioNecessario - totalTiradoDoBolso);
 
-    document.getElementById('res-cotas').innerText = formatarNumero(acoesNecessarias) + ' ações de ' + ticker;
+    document.getElementById('res-cotas').innerText = formatarNumero(acoesNecessarias) + ' cotas/ações de ' + ticker;
     document.getElementById('res-patrimonio').innerText = 'Patrimônio necessário: ' + formatarMoeda(patrimonioNecessario);
     document.getElementById('res-aporte-mensal').innerText = formatarMoeda(aporteMensalNecessario) + ' / mês';
-    document.getElementById('res-acoes-mes').innerText = '~' + formatarNumero(acoesPorMes) + ' ações / mês';
+    document.getElementById('res-acoes-mes').innerText = '~' + formatarNumero(acoesPorMes) + ' cotas / mês';
     document.getElementById('res-total-bolso').innerText = formatarMoeda(totalTiradoDoBolso);
     document.getElementById('res-efeito-bola').innerText = formatarMoeda(pagoPelosDividendos);
 
     document.getElementById('res-resumo-texto').innerHTML = 
-      '<strong>Como funciona na prática:</strong> Investindo <strong>' + formatarMoeda(aporteMensalNecessario) + '</strong> todos os meses durante <strong>' + anos + ' anos</strong> e reinvestindo 100% dos dividendos recebidos de <strong>' + ticker + '</strong>, você acumulará as <strong>' + formatarNumero(acoesNecessarias) + ' ações</strong> necessárias para receber <strong>' + formatarMoeda(rendaMensalDesejada) + ' por mês</strong> livres de Imposto de Renda, sem precisar vender nenhuma ação.';
+      '<strong>Como funciona na prática:</strong> Investindo <strong>' + formatarMoeda(aporteMensalNecessario) + '</strong> todos os meses durante <strong>' + anos + ' anos</strong> e reinvestindo 100% dos dividendos recebidos de <strong>' + ticker + '</strong>, você acumulará as <strong>' + formatarNumero(acoesNecessarias) + ' cotas/ações</strong> necessárias para receber <strong>' + formatarMoeda(rendaMensalDesejada) + ' por mês</strong>, sem precisar vender nenhuma ação.';
 
     document.getElementById('sim-results-area').style.display = 'block';
     setTimeout(enviarAlturaParaBlogger, 100);
@@ -499,5 +173,3 @@
   window.addEventListener('DOMContentLoaded', carregarCotacoesGitHub);
   window.addEventListener('resize', enviarAlturaParaBlogger);
 </script>
-</body>
-</html>
