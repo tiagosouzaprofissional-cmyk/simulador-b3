@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "14/11/2026 01:32",
+  "atualizado_em": "17/11/2026 04:04",
   "destaques": [
     "BBAS3",
     "BBSE3",
@@ -131,8 +131,8 @@
     },
     "COIN11": {
       "nome": "COIN11",
-      "preco": 41.0,
-      "dy": 31.68,
+      "preco": 39.7,
+      "dy": 32.72,
       "dpa": 12.99,
       "teto_bazin": 216.49
     },
@@ -321,9 +321,9 @@
     "ALUP11": {
       "nome": "ALUP11",
       "preco": 33.16,
-      "dy": 3.89,
-      "dpa": 1.29,
-      "teto_bazin": 21.5
+      "dy": 2.99,
+      "dpa": 0.99,
+      "teto_bazin": 16.5
     },
     "CMIG3": {
       "nome": "CMIG3",
@@ -565,10 +565,10 @@
     },
     "LEVE3": {
       "nome": "LEVE3",
-      "preco": 31.61,
-      "dy": 9.02,
-      "dpa": 2.85,
-      "teto_bazin": 47.52
+      "preco": 30.84,
+      "dy": 11.73,
+      "dpa": 3.62,
+      "teto_bazin": 60.31
     },
     "POMO4": {
       "nome": "POMO4",
@@ -782,17 +782,17 @@
     },
     "CURY3": {
       "nome": "CURY3",
-      "preco": 28.8,
-      "dy": 14.95,
-      "dpa": 4.3,
-      "teto_bazin": 71.74
+      "preco": 28.15,
+      "dy": 17.6,
+      "dpa": 4.95,
+      "teto_bazin": 82.56
     },
     "LAVV3": {
       "nome": "LAVV3",
       "preco": 8.28,
-      "dy": 29.33,
-      "dpa": 2.43,
-      "teto_bazin": 40.48
+      "dy": 21.63,
+      "dpa": 1.79,
+      "teto_bazin": 29.85
     },
     "JHSF3": {
       "nome": "JHSF3",
@@ -930,9 +930,9 @@
     "CPTS11": {
       "nome": "CPTS11",
       "preco": 6.88,
-      "dy": 15.7,
-      "dpa": 1.08,
-      "teto_bazin": 18.0
+      "dy": 14.39,
+      "dpa": 0.99,
+      "teto_bazin": 16.5
     },
     "RECR11": {
       "nome": "RECR11",
@@ -958,9 +958,9 @@
     "RBRR11": {
       "nome": "RBRR11",
       "preco": 63.0,
-      "dy": 14.54,
-      "dpa": 9.16,
-      "teto_bazin": 152.67
+      "dy": 15.48,
+      "dpa": 9.75,
+      "teto_bazin": 162.5
     },
     "KNSC11": {
       "nome": "KNSC11",
@@ -1007,37 +1007,37 @@
     "VGIR11": {
       "nome": "VGIR11",
       "preco": 8.5,
-      "dy": 17.76,
-      "dpa": 1.51,
-      "teto_bazin": 25.17
+      "dy": 17.64,
+      "dpa": 1.5,
+      "teto_bazin": 24.98
     },
     "SNAG11": {
       "nome": "SNAG11",
-      "preco": 9.77,
-      "dy": 16.17,
+      "preco": 9.6,
+      "dy": 16.46,
       "dpa": 1.58,
       "teto_bazin": 26.33
     },
     "KNCA11": {
       "nome": "KNCA11",
-      "preco": 87.0,
-      "dy": 13.13,
+      "preco": 85.71,
+      "dy": 13.32,
       "dpa": 11.42,
       "teto_bazin": 190.33
     },
     "RZAG11": {
       "nome": "RZAG11",
-      "preco": 7.78,
-      "dy": 17.67,
+      "preco": 7.74,
+      "dy": 17.76,
       "dpa": 1.38,
       "teto_bazin": 22.92
     },
     "VGIA11": {
       "nome": "VGIA11",
-      "preco": 8.31,
-      "dy": 19.49,
-      "dpa": 1.62,
-      "teto_bazin": 27.0
+      "preco": 8.09,
+      "dy": 19.65,
+      "dpa": 1.59,
+      "teto_bazin": 26.5
     },
     "FGAA11": {
       "nome": "FGAA11",
@@ -1048,8 +1048,8 @@
     },
     "XPCA11": {
       "nome": "XPCA11",
-      "preco": 6.79,
-      "dy": 18.56,
+      "preco": 6.73,
+      "dy": 18.72,
       "dpa": 1.26,
       "teto_bazin": 21.0
     },
