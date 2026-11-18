@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "17/11/2026 04:04",
+  "atualizado_em": "18/11/2026 03:00",
   "destaques": [
     "BBAS3",
     "BBSE3",
@@ -19,99 +19,99 @@
   "ativos": {
     "BBAS3": {
       "nome": "Banco do Brasil",
-      "preco": 15.1,
-      "dy": 4.34,
+      "preco": 14.95,
+      "dy": 4.38,
       "dpa": 0.65,
       "teto_bazin": 10.92
     },
     "BBSE3": {
       "nome": "BB Seguridade",
-      "preco": 37.33,
-      "dy": 12.3,
+      "preco": 37.2,
+      "dy": 12.34,
       "dpa": 4.59,
       "teto_bazin": 76.5
     },
     "ITSA4": {
       "nome": "Itaúsa",
-      "preco": 13.65,
-      "dy": 8.26,
+      "preco": 13.39,
+      "dy": 8.42,
       "dpa": 1.13,
       "teto_bazin": 18.8
     },
     "BBDC3": {
       "nome": "Bradesco ON",
-      "preco": 13.44,
-      "dy": 10.91,
+      "preco": 13.0,
+      "dy": 11.28,
       "dpa": 1.47,
       "teto_bazin": 24.43
     },
     "BBDC4": {
       "nome": "Bradesco PN",
-      "preco": 14.52,
-      "dy": 11.1,
+      "preco": 14.23,
+      "dy": 11.33,
       "dpa": 1.61,
       "teto_bazin": 26.87
     },
     "TRXF11": {
       "nome": "TRX Real Estate (FII)",
-      "preco": 55.79,
-      "dy": 19.48,
+      "preco": 54.79,
+      "dy": 19.84,
       "dpa": 10.87,
       "teto_bazin": 181.17
     },
     "XSPI11": {
       "nome": "XP S&P 500 Dividendos ETF",
-      "preco": 111.65,
+      "preco": 111.46,
       "dy": 9.8,
-      "dpa": 10.94,
-      "teto_bazin": 182.36
+      "dpa": 10.92,
+      "teto_bazin": 182.05
     },
     "XBCI11": {
       "nome": "XP Crédito Imobiliário ETF",
-      "preco": 78.02,
+      "preco": 73.72,
       "dy": 11.4,
-      "dpa": 8.89,
-      "teto_bazin": 148.24
+      "dpa": 8.4,
+      "teto_bazin": 140.07
     },
     "TAEE11": {
       "nome": "Taesa",
-      "preco": 42.09,
-      "dy": 7.14,
-      "dpa": 3.01,
-      "teto_bazin": 50.11
+      "preco": 40.93,
+      "dy": 9.92,
+      "dpa": 4.06,
+      "teto_bazin": 67.71
     },
     "ISAE4": {
       "nome": "ISA Energia (CTEEP)",
-      "preco": 26.64,
-      "dy": 7.52,
+      "preco": 26.49,
+      "dy": 7.56,
       "dpa": 2.0,
       "teto_bazin": 33.39
     },
     "CMIG4": {
       "nome": "Cemig PN",
-      "preco": 11.03,
-      "dy": 10.33,
+      "preco": 10.95,
+      "dy": 10.41,
       "dpa": 1.14,
       "teto_bazin": 18.99
     },
     "CPFE3": {
       "nome": "CPFL Energia",
-      "preco": 43.97,
-      "dy": 6.41,
+      "preco": 44.65,
+      "dy": 6.32,
       "dpa": 2.82,
       "teto_bazin": 47.0
     },
     "BEES3": {
       "nome": "Banestes",
-      "preco": 9.52,
-      "dy": 9.13,
+      "preco": 9.4,
+      "dy": 9.24,
       "dpa": 0.87,
       "teto_bazin": 14.48
     },
     "CXSE3": {
       "nome": "Caixa Seguridade",
-      "preco": 21.35,
-      "dy": 6.47,
+      "preco": 21.49,
+      "dy": 6.43,
       "dpa": 1.38,
       "teto_bazin": 23.04
     },
@@ -124,645 +124,645 @@
     },
     "CHIP11": {
       "nome": "CHIP11",
-      "preco": 33.75,
+      "preco": 32.85,
       "dy": 9.5,
-      "dpa": 3.21,
-      "teto_bazin": 53.44
+      "dpa": 3.12,
+      "teto_bazin": 52.01
     },
     "COIN11": {
       "nome": "COIN11",
-      "preco": 39.7,
-      "dy": 32.72,
+      "preco": 38.97,
+      "dy": 33.33,
       "dpa": 12.99,
       "teto_bazin": 216.49
     },
     "ETHY11": {
       "nome": "ETHY11",
-      "preco": 50.6,
+      "preco": 48.25,
       "dy": 11.5,
-      "dpa": 5.82,
-      "teto_bazin": 96.98
+      "dpa": 5.55,
+      "teto_bazin": 92.48
     },
     "OBTC3": {
       "nome": "OBTC3",
-      "preco": 6.33,
+      "preco": 6.15,
       "dy": 6.0,
-      "dpa": 0.38,
-      "teto_bazin": 6.33
+      "dpa": 0.37,
+      "teto_bazin": 6.15
     },
     "NDIV11": {
       "nome": "NDIV11",
-      "preco": 116.17,
+      "preco": 114.69,
       "dy": 8.5,
-      "dpa": 9.87,
-      "teto_bazin": 164.57
+      "dpa": 9.75,
+      "teto_bazin": 162.48
     },
     "DIVO11": {
       "nome": "DIVO11",
-      "preco": 123.45,
+      "preco": 121.68,
       "dy": 7.5,
-      "dpa": 9.26,
-      "teto_bazin": 154.31
+      "dpa": 9.13,
+      "teto_bazin": 152.1
     },
     "BOVA11": {
       "nome": "BOVA11",
-      "preco": 169.68,
+      "preco": 166.58,
       "dy": 6.0,
-      "dpa": 10.18,
-      "teto_bazin": 169.68
+      "dpa": 9.99,
+      "teto_bazin": 166.58
     },
     "IVVB11": {
       "nome": "IVVB11",
-      "preco": 483.15,
+      "preco": 485.0,
       "dy": 6.0,
-      "dpa": 28.99,
-      "teto_bazin": 483.15
+      "dpa": 29.1,
+      "teto_bazin": 485.0
     },
     "HASH11": {
       "nome": "HASH11",
-      "preco": 49.35,
+      "preco": 47.77,
       "dy": 6.0,
-      "dpa": 2.96,
-      "teto_bazin": 49.35
+      "dpa": 2.87,
+      "teto_bazin": 47.77
     },
     "ITUB3": {
       "nome": "ITUB3",
-      "preco": 46.22,
-      "dy": 6.71,
+      "preco": 45.45,
+      "dy": 6.82,
       "dpa": 3.1,
       "teto_bazin": 51.68
     },
     "ITUB4": {
       "nome": "ITUB4",
-      "preco": 42.27,
-      "dy": 7.34,
+      "preco": 41.3,
+      "dy": 7.51,
       "dpa": 3.1,
       "teto_bazin": 51.68
     },
     "SANB11": {
       "nome": "SANB11",
-      "preco": 28.4,
-      "dy": 7.65,
+      "preco": 28.65,
+      "dy": 7.58,
       "dpa": 2.17,
       "teto_bazin": 36.21
     },
     "SANB3": {
       "nome": "SANB3",
-      "preco": 14.25,
-      "dy": 7.26,
+      "preco": 14.44,
+      "dy": 7.16,
       "dpa": 1.03,
       "teto_bazin": 17.24
     },
     "SANB4": {
       "nome": "SANB4",
-      "preco": 14.07,
-      "dy": 8.09,
+      "preco": 14.09,
+      "dy": 8.08,
       "dpa": 1.14,
       "teto_bazin": 18.97
     },
     "BPAC11": {
       "nome": "BPAC11",
-      "preco": 54.0,
-      "dy": 2.63,
+      "preco": 52.77,
+      "dy": 2.69,
       "dpa": 1.42,
       "teto_bazin": 23.67
     },
     "BRSR6": {
       "nome": "BRSR6",
-      "preco": 12.76,
-      "dy": 12.05,
+      "preco": 12.61,
+      "dy": 12.2,
       "dpa": 1.54,
       "teto_bazin": 25.63
     },
     "ABCB4": {
       "nome": "ABCB4",
-      "preco": 23.61,
-      "dy": 11.39,
+      "preco": 23.8,
+      "dy": 11.3,
       "dpa": 2.69,
       "teto_bazin": 44.81
     },
     "BMGB4": {
       "nome": "BMGB4",
-      "preco": 5.23,
-      "dy": 8.5,
+      "preco": 5.16,
+      "dy": 8.61,
       "dpa": 0.44,
       "teto_bazin": 7.41
     },
     "BRBI11": {
       "nome": "BRBI11",
-      "preco": 10.4,
-      "dy": 14.42,
+      "preco": 10.1,
+      "dy": 14.85,
       "dpa": 1.5,
       "teto_bazin": 25.0
     },
     "PSSA3": {
       "nome": "PSSA3",
-      "preco": 46.41,
-      "dy": 6.46,
+      "preco": 45.54,
+      "dy": 6.59,
       "dpa": 3.0,
       "teto_bazin": 49.99
     },
     "IRBR3": {
       "nome": "IRBR3",
-      "preco": 60.33,
+      "preco": 60.25,
       "dy": 2.62,
       "dpa": 1.58,
       "teto_bazin": 26.33
     },
     "B3SA3": {
       "nome": "B3SA3",
-      "preco": 14.89,
-      "dy": 6.06,
+      "preco": 14.81,
+      "dy": 6.09,
       "dpa": 0.9,
       "teto_bazin": 15.04
     },
     "BEES4": {
       "nome": "BEES4",
-      "preco": 9.75,
-      "dy": 8.91,
+      "preco": 9.67,
+      "dy": 8.99,
       "dpa": 0.87,
       "teto_bazin": 14.48
     },
     "EGIE3": {
       "nome": "EGIE3",
-      "preco": 26.25,
-      "dy": 4.25,
+      "preco": 25.7,
+      "dy": 4.34,
       "dpa": 1.12,
       "teto_bazin": 18.59
     },
     "EQTL3": {
       "nome": "EQTL3",
-      "preco": 34.34,
+      "preco": 33.78,
       "dy": 0.39,
       "dpa": 0.13,
       "teto_bazin": 2.22
     },
     "CPLE3": {
       "nome": "CPLE3",
-      "preco": 15.38,
-      "dy": 6.91,
+      "preco": 15.17,
+      "dy": 7.0,
       "dpa": 1.06,
       "teto_bazin": 17.71
     },
     "ENGI11": {
       "nome": "ENGI11",
-      "preco": 48.35,
-      "dy": 2.35,
+      "preco": 48.29,
+      "dy": 2.36,
       "dpa": 1.14,
       "teto_bazin": 18.96
     },
     "AURE3": {
       "nome": "AURE3",
-      "preco": 12.06,
+      "preco": 11.72,
       "dy": 6.0,
-      "dpa": 0.72,
-      "teto_bazin": 12.06
+      "dpa": 0.7,
+      "teto_bazin": 11.72
     },
     "ALUP11": {
       "nome": "ALUP11",
-      "preco": 33.16,
+      "preco": 33.09,
       "dy": 2.99,
       "dpa": 0.99,
       "teto_bazin": 16.5
     },
     "CMIG3": {
       "nome": "CMIG3",
-      "preco": 18.0,
-      "dy": 6.97,
+      "preco": 17.74,
+      "dy": 7.07,
       "dpa": 1.25,
       "teto_bazin": 20.91
     },
     "TAEE3": {
       "nome": "TAEE3",
-      "preco": 13.82,
-      "dy": 7.25,
-      "dpa": 1.0,
-      "teto_bazin": 16.7
+      "preco": 13.55,
+      "dy": 10.0,
+      "dpa": 1.35,
+      "teto_bazin": 22.57
     },
     "TAEE4": {
       "nome": "TAEE4",
-      "preco": 14.1,
-      "dy": 7.11,
-      "dpa": 1.0,
-      "teto_bazin": 16.7
+      "preco": 13.72,
+      "dy": 9.87,
+      "dpa": 1.35,
+      "teto_bazin": 22.57
     },
     "ISAE3": {
       "nome": "ISAE3",
-      "preco": 36.54,
-      "dy": 5.48,
+      "preco": 35.9,
+      "dy": 5.58,
       "dpa": 2.0,
       "teto_bazin": 33.39
     },
     "SBSP3": {
       "nome": "SBSP3",
-      "preco": 27.22,
-      "dy": 5.31,
+      "preco": 27.1,
+      "dy": 5.33,
       "dpa": 1.44,
       "teto_bazin": 24.07
     },
     "SAPR11": {
       "nome": "SAPR11",
-      "preco": 31.8,
-      "dy": 1.74,
+      "preco": 32.9,
+      "dy": 1.68,
       "dpa": 0.55,
       "teto_bazin": 9.21
     },
     "SAPR4": {
       "nome": "SAPR4",
-      "preco": 6.28,
-      "dy": 1.79,
+      "preco": 6.55,
+      "dy": 1.72,
       "dpa": 0.11,
       "teto_bazin": 1.88
     },
     "SAPR3": {
       "nome": "SAPR3",
-      "preco": 6.72,
-      "dy": 1.52,
+      "preco": 6.93,
+      "dy": 1.48,
       "dpa": 0.1,
       "teto_bazin": 1.7
     },
     "CSMG3": {
       "nome": "CSMG3",
-      "preco": 55.15,
-      "dy": 3.61,
+      "preco": 54.67,
+      "dy": 3.65,
       "dpa": 1.99,
       "teto_bazin": 33.22
     },
     "PETR4": {
       "nome": "PETR4",
-      "preco": 45.3,
-      "dy": 8.09,
+      "preco": 44.02,
+      "dy": 8.32,
       "dpa": 3.66,
       "teto_bazin": 61.07
     },
     "PETR3": {
       "nome": "PETR3",
-      "preco": 51.87,
-      "dy": 7.06,
+      "preco": 50.19,
+      "dy": 7.3,
       "dpa": 3.66,
       "teto_bazin": 61.07
     },
     "VALE3": {
       "nome": "VALE3",
-      "preco": 63.5,
-      "dy": 8.84,
+      "preco": 60.7,
+      "dy": 9.25,
       "dpa": 5.61,
       "teto_bazin": 93.54
     },
     "PRIO3": {
       "nome": "PRIO3",
-      "preco": 63.3,
+      "preco": 62.63,
       "dy": 6.0,
-      "dpa": 3.8,
-      "teto_bazin": 63.3
+      "dpa": 3.76,
+      "teto_bazin": 62.63
     },
     "RECV3": {
       "nome": "RECV3",
-      "preco": 10.74,
-      "dy": 15.88,
+      "preco": 10.38,
+      "dy": 16.43,
       "dpa": 1.71,
       "teto_bazin": 28.42
     },
     "BRAV3": {
       "nome": "BRAV3",
-      "preco": 14.5,
-      "dy": 0.85,
+      "preco": 13.94,
+      "dy": 0.89,
       "dpa": 0.12,
       "teto_bazin": 2.06
     },
     "CSAN3": {
       "nome": "CSAN3",
-      "preco": 3.1,
+      "preco": 3.09,
       "dy": 6.0,
       "dpa": 0.19,
-      "teto_bazin": 3.1
+      "teto_bazin": 3.09
     },
     "UGPA3": {
       "nome": "UGPA3",
-      "preco": 32.77,
-      "dy": 6.1,
+      "preco": 32.28,
+      "dy": 6.2,
       "dpa": 2.0,
       "teto_bazin": 33.33
     },
     "VBBR3": {
       "nome": "VBBR3",
-      "preco": 30.57,
-      "dy": 6.47,
+      "preco": 30.7,
+      "dy": 6.44,
       "dpa": 1.98,
       "teto_bazin": 32.96
     },
     "RAIZ4": {
       "nome": "RAIZ4",
-      "preco": 20.0,
+      "preco": 19.11,
       "dy": 6.0,
-      "dpa": 1.2,
-      "teto_bazin": 20.0
+      "dpa": 1.15,
+      "teto_bazin": 19.11
     },
     "GGBR4": {
       "nome": "GGBR4",
-      "preco": 24.73,
-      "dy": 3.44,
+      "preco": 24.6,
+      "dy": 3.46,
       "dpa": 0.85,
       "teto_bazin": 14.17
     },
     "GGBR3": {
       "nome": "GGBR3",
-      "preco": 21.09,
-      "dy": 4.03,
+      "preco": 20.68,
+      "dy": 4.11,
       "dpa": 0.85,
       "teto_bazin": 14.17
     },
     "GOAU4": {
       "nome": "GOAU4",
-      "preco": 10.94,
-      "dy": 3.66,
+      "preco": 10.84,
+      "dy": 3.69,
       "dpa": 0.4,
       "teto_bazin": 6.67
     },
     "CSNA3": {
       "nome": "CSNA3",
-      "preco": 3.72,
+      "preco": 3.68,
       "dy": 6.0,
       "dpa": 0.22,
-      "teto_bazin": 3.72
+      "teto_bazin": 3.68
     },
     "USIM5": {
       "nome": "USIM5",
-      "preco": 4.78,
+      "preco": 4.85,
       "dy": 6.0,
       "dpa": 0.29,
-      "teto_bazin": 4.78
+      "teto_bazin": 4.85
     },
     "CMIN3": {
       "nome": "CMIN3",
-      "preco": 4.64,
-      "dy": 4.73,
+      "preco": 4.73,
+      "dy": 4.64,
       "dpa": 0.22,
       "teto_bazin": 3.66
     },
     "FESA4": {
       "nome": "FESA4",
-      "preco": 5.49,
+      "preco": 5.45,
       "dy": 6.0,
       "dpa": 0.33,
-      "teto_bazin": 5.49
+      "teto_bazin": 5.45
     },
     "SUZB3": {
       "nome": "SUZB3",
-      "preco": 54.77,
-      "dy": 2.05,
+      "preco": 55.5,
+      "dy": 2.02,
       "dpa": 1.12,
       "teto_bazin": 18.69
     },
     "KLBN11": {
       "nome": "KLBN11",
-      "preco": 17.39,
+      "preco": 17.41,
       "dy": 5.19,
       "dpa": 0.9,
       "teto_bazin": 15.05
     },
     "KLBN4": {
       "nome": "KLBN4",
-      "preco": 3.46,
-      "dy": 5.22,
+      "preco": 3.44,
+      "dy": 5.25,
       "dpa": 0.18,
       "teto_bazin": 3.01
     },
     "KLBN3": {
       "nome": "KLBN3",
-      "preco": 3.59,
-      "dy": 5.03,
+      "preco": 3.58,
+      "dy": 5.04,
       "dpa": 0.18,
       "teto_bazin": 3.01
     },
     "RANI3": {
       "nome": "RANI3",
-      "preco": 8.18,
-      "dy": 5.12,
+      "preco": 8.19,
+      "dy": 5.11,
       "dpa": 0.42,
       "teto_bazin": 6.98
     },
     "WEGE3": {
       "nome": "WEGE3",
-      "preco": 51.31,
-      "dy": 3.9,
+      "preco": 50.4,
+      "dy": 3.97,
       "dpa": 2.0,
       "teto_bazin": 33.39
     },
     "TUPY3": {
       "nome": "TUPY3",
-      "preco": 20.04,
+      "preco": 19.66,
       "dy": 6.0,
-      "dpa": 1.2,
-      "teto_bazin": 20.04
+      "dpa": 1.18,
+      "teto_bazin": 19.66
     },
     "ROMI3": {
       "nome": "ROMI3",
-      "preco": 5.83,
-      "dy": 8.92,
+      "preco": 5.7,
+      "dy": 9.12,
       "dpa": 0.52,
       "teto_bazin": 8.67
     },
     "LEVE3": {
       "nome": "LEVE3",
-      "preco": 30.84,
-      "dy": 11.73,
+      "preco": 30.58,
+      "dy": 11.83,
       "dpa": 3.62,
       "teto_bazin": 60.31
     },
     "POMO4": {
       "nome": "POMO4",
-      "preco": 3.75,
-      "dy": 24.64,
+      "preco": 3.81,
+      "dy": 24.25,
       "dpa": 0.92,
       "teto_bazin": 15.4
     },
     "RAPT4": {
       "nome": "RAPT4",
-      "preco": 4.0,
+      "preco": 3.98,
       "dy": 6.0,
       "dpa": 0.24,
-      "teto_bazin": 4.0
+      "teto_bazin": 3.98
     },
     "KEPL3": {
       "nome": "KEPL3",
-      "preco": 7.3,
-      "dy": 3.95,
+      "preco": 6.75,
+      "dy": 4.27,
       "dpa": 0.29,
       "teto_bazin": 4.81
     },
     "SHUL4": {
       "nome": "SHUL4",
-      "preco": 4.24,
-      "dy": 14.88,
+      "preco": 4.14,
+      "dy": 15.24,
       "dpa": 0.63,
       "teto_bazin": 10.52
     },
     "AGRO3": {
       "nome": "AGRO3",
-      "preco": 17.91,
+      "preco": 17.9,
       "dy": 1.68,
       "dpa": 0.3,
       "teto_bazin": 5.02
     },
     "SLCE3": {
       "nome": "SLCE3",
-      "preco": 18.28,
-      "dy": 4.4,
+      "preco": 17.85,
+      "dy": 4.51,
       "dpa": 0.81,
       "teto_bazin": 13.42
     },
     "TTEN3": {
       "nome": "TTEN3",
-      "preco": 11.17,
-      "dy": 1.63,
+      "preco": 11.14,
+      "dy": 1.64,
       "dpa": 0.18,
       "teto_bazin": 3.04
     },
     "SMTO3": {
       "nome": "SMTO3",
-      "preco": 18.41,
-      "dy": 1.18,
+      "preco": 18.05,
+      "dy": 1.2,
       "dpa": 0.22,
       "teto_bazin": 3.61
     },
     "JALL3": {
       "nome": "JALL3",
-      "preco": 2.49,
-      "dy": 0.32,
+      "preco": 2.42,
+      "dy": 0.33,
       "dpa": 0.01,
       "teto_bazin": 0.13
     },
     "BEEF3": {
       "nome": "BEEF3",
-      "preco": 3.41,
-      "dy": 5.74,
+      "preco": 3.42,
+      "dy": 5.72,
       "dpa": 0.2,
       "teto_bazin": 3.26
     },
     "MDIA3": {
       "nome": "MDIA3",
-      "preco": 17.02,
-      "dy": 5.62,
+      "preco": 16.88,
+      "dy": 5.67,
       "dpa": 0.96,
       "teto_bazin": 15.94
     },
     "CAML3": {
       "nome": "CAML3",
-      "preco": 4.69,
-      "dy": 6.25,
+      "preco": 4.62,
+      "dy": 6.35,
       "dpa": 0.29,
       "teto_bazin": 4.89
     },
     "ABEV3": {
       "nome": "ABEV3",
-      "preco": 15.79,
-      "dy": 5.36,
+      "preco": 15.87,
+      "dy": 5.33,
       "dpa": 0.85,
       "teto_bazin": 14.11
     },
     "VIVT3": {
       "nome": "VIVT3",
-      "preco": 34.04,
-      "dy": 7.55,
+      "preco": 34.53,
+      "dy": 7.44,
       "dpa": 2.57,
       "teto_bazin": 42.82
     },
     "TIMS3": {
       "nome": "TIMS3",
-      "preco": 21.55,
-      "dy": 6.83,
+      "preco": 21.87,
+      "dy": 6.73,
       "dpa": 1.47,
       "teto_bazin": 24.54
     },
     "UNIP6": {
       "nome": "UNIP6",
-      "preco": 50.72,
-      "dy": 12.77,
+      "preco": 49.35,
+      "dy": 13.12,
       "dpa": 6.48,
       "teto_bazin": 107.95
     },
     "UNIP3": {
       "nome": "UNIP3",
-      "preco": 48.52,
-      "dy": 12.14,
+      "preco": 47.91,
+      "dy": 12.29,
       "dpa": 5.89,
       "teto_bazin": 98.13
     },
     "RADL3": {
       "nome": "RADL3",
-      "preco": 14.29,
-      "dy": 3.15,
+      "preco": 14.08,
+      "dy": 3.2,
       "dpa": 0.45,
       "teto_bazin": 7.51
     },
     "FLRY3": {
       "nome": "FLRY3",
-      "preco": 21.2,
-      "dy": 6.13,
+      "preco": 20.76,
+      "dy": 6.26,
       "dpa": 1.3,
       "teto_bazin": 21.66
     },
     "HYPE3": {
       "nome": "HYPE3",
-      "preco": 22.47,
-      "dy": 4.8,
+      "preco": 22.2,
+      "dy": 4.86,
       "dpa": 1.08,
       "teto_bazin": 17.98
     },
     "LREN3": {
       "nome": "LREN3",
-      "preco": 9.72,
-      "dy": 9.47,
+      "preco": 9.58,
+      "dy": 9.61,
       "dpa": 0.92,
       "teto_bazin": 15.34
     },
     "MGLU3": {
       "nome": "MGLU3",
-      "preco": 7.81,
-      "dy": 1.04,
+      "preco": 7.49,
+      "dy": 1.09,
       "dpa": 0.08,
       "teto_bazin": 1.36
     },
     "ASAI3": {
       "nome": "ASAI3",
-      "preco": 9.68,
-      "dy": 1.08,
+      "preco": 9.39,
+      "dy": 1.11,
       "dpa": 0.1,
       "teto_bazin": 1.74
     },
     "MULT3": {
       "nome": "MULT3",
-      "preco": 27.34,
-      "dy": 4.25,
+      "preco": 26.98,
+      "dy": 4.3,
       "dpa": 1.16,
       "teto_bazin": 19.35
     },
     "IGTI11": {
       "nome": "IGTI11",
-      "preco": 22.52,
-      "dy": 3.0,
+      "preco": 21.94,
+      "dy": 3.08,
       "dpa": 0.68,
       "teto_bazin": 11.25
     },
     "ALOS3": {
       "nome": "ALOS3",
-      "preco": 27.05,
-      "dy": 12.97,
+      "preco": 26.42,
+      "dy": 13.28,
       "dpa": 3.51,
       "teto_bazin": 58.47
     },
     "CYRE3": {
       "nome": "CYRE3",
-      "preco": 19.74,
-      "dy": 13.83,
+      "preco": 19.5,
+      "dy": 14.0,
       "dpa": 2.73,
       "teto_bazin": 45.5
     },
     "EZTC3": {
       "nome": "EZTC3",
-      "preco": 9.87,
-      "dy": 10.77,
+      "preco": 9.65,
+      "dy": 11.02,
       "dpa": 1.06,
       "teto_bazin": 17.72
     },
@@ -775,183 +775,176 @@
     },
     "DIRR3": {
       "nome": "DIRR3",
-      "preco": 9.53,
-      "dy": 16.26,
+      "preco": 9.38,
+      "dy": 16.52,
       "dpa": 1.55,
       "teto_bazin": 25.83
     },
     "CURY3": {
       "nome": "CURY3",
-      "preco": 28.15,
-      "dy": 17.6,
+      "preco": 27.45,
+      "dy": 18.05,
       "dpa": 4.95,
       "teto_bazin": 82.56
     },
     "LAVV3": {
       "nome": "LAVV3",
-      "preco": 8.28,
-      "dy": 21.63,
+      "preco": 8.03,
+      "dy": 22.3,
       "dpa": 1.79,
       "teto_bazin": 29.85
     },
     "JHSF3": {
       "nome": "JHSF3",
-      "preco": 9.78,
-      "dy": 8.07,
+      "preco": 10.04,
+      "dy": 7.87,
       "dpa": 0.79,
       "teto_bazin": 13.16
     },
-    "RAIL3": {
-      "nome": "RAIL3",
-      "preco": 16.26,
-      "dy": 0.67,
-      "dpa": 0.11,
-      "teto_bazin": 1.81
-    },
     "ECOR3": {
       "nome": "ECOR3",
-      "preco": 5.95,
-      "dy": 5.08,
+      "preco": 5.72,
+      "dy": 5.29,
       "dpa": 0.3,
       "teto_bazin": 5.04
     },
     "VAMO3": {
       "nome": "VAMO3",
-      "preco": 2.65,
-      "dy": 5.29,
+      "preco": 2.62,
+      "dy": 5.35,
       "dpa": 0.14,
       "teto_bazin": 2.34
     },
     "RENT3": {
       "nome": "RENT3",
-      "preco": 30.07,
-      "dy": 7.08,
+      "preco": 29.31,
+      "dy": 7.26,
       "dpa": 2.13,
       "teto_bazin": 35.49
     },
     "MOVI3": {
       "nome": "MOVI3",
-      "preco": 6.11,
-      "dy": 12.01,
+      "preco": 5.88,
+      "dy": 12.48,
       "dpa": 0.73,
       "teto_bazin": 12.23
     },
     "MXRF11": {
       "nome": "MXRF11",
-      "preco": 8.75,
-      "dy": 13.59,
+      "preco": 8.58,
+      "dy": 13.86,
       "dpa": 1.19,
       "teto_bazin": 19.82
     },
     "HGLG11": {
       "nome": "HGLG11",
-      "preco": 146.02,
-      "dy": 9.23,
+      "preco": 143.12,
+      "dy": 9.42,
       "dpa": 13.48,
       "teto_bazin": 224.67
     },
     "XPML11": {
       "nome": "XPML11",
-      "preco": 92.0,
-      "dy": 12.03,
+      "preco": 89.7,
+      "dy": 12.34,
       "dpa": 11.07,
       "teto_bazin": 184.49
     },
     "KNRI11": {
       "nome": "KNRI11",
-      "preco": 151.79,
-      "dy": 8.77,
+      "preco": 147.5,
+      "dy": 9.02,
       "dpa": 13.31,
       "teto_bazin": 221.83
     },
     "KNCR11": {
       "nome": "KNCR11",
-      "preco": 104.86,
-      "dy": 13.05,
+      "preco": 103.01,
+      "dy": 13.28,
       "dpa": 13.68,
       "teto_bazin": 228.05
     },
     "KNIP11": {
       "nome": "KNIP11",
-      "preco": 87.65,
-      "dy": 11.64,
+      "preco": 85.86,
+      "dy": 11.88,
       "dpa": 10.2,
       "teto_bazin": 170.0
     },
     "HGRU11": {
       "nome": "HGRU11",
-      "preco": 115.47,
-      "dy": 9.48,
+      "preco": 113.85,
+      "dy": 9.61,
       "dpa": 10.95,
       "teto_bazin": 182.43
     },
     "VISC11": {
       "nome": "VISC11",
-      "preco": 98.6,
-      "dy": 10.16,
+      "preco": 97.04,
+      "dy": 10.33,
       "dpa": 10.02,
       "teto_bazin": 167.0
     },
     "XPLG11": {
       "nome": "XPLG11",
-      "preco": 90.9,
-      "dy": 10.83,
+      "preco": 88.42,
+      "dy": 11.13,
       "dpa": 9.84,
       "teto_bazin": 164.0
     },
     "BRCO11": {
       "nome": "BRCO11",
-      "preco": 107.35,
-      "dy": 10.28,
+      "preco": 105.0,
+      "dy": 10.51,
       "dpa": 11.04,
       "teto_bazin": 184.0
     },
     "BTLG11": {
       "nome": "BTLG11",
-      "preco": 98.75,
-      "dy": 9.75,
+      "preco": 97.21,
+      "dy": 9.91,
       "dpa": 9.63,
       "teto_bazin": 160.48
     },
     "VILG11": {
       "nome": "VILG11",
-      "preco": 88.72,
-      "dy": 10.87,
+      "preco": 87.3,
+      "dy": 11.04,
       "dpa": 9.64,
       "teto_bazin": 160.67
     },
     "HGBS11": {
       "nome": "HGBS11",
-      "preco": 17.74,
-      "dy": 11.22,
+      "preco": 17.52,
+      "dy": 11.36,
       "dpa": 1.99,
       "teto_bazin": 33.17
     },
     "CPTS11": {
       "nome": "CPTS11",
-      "preco": 6.88,
-      "dy": 14.39,
+      "preco": 6.77,
+      "dy": 14.62,
       "dpa": 0.99,
       "teto_bazin": 16.5
     },
     "RECR11": {
       "nome": "RECR11",
-      "preco": 68.7,
-      "dy": 15.55,
+      "preco": 68.0,
+      "dy": 15.71,
       "dpa": 10.68,
       "teto_bazin": 178.0
     },
     "VRTA11": {
       "nome": "VRTA11",
-      "preco": 66.3,
-      "dy": 15.38,
+      "preco": 65.93,
+      "dy": 15.47,
       "dpa": 10.2,
       "teto_bazin": 170.0
     },
     "HGCR11": {
       "nome": "HGCR11",
-      "preco": 87.3,
-      "dy": 13.4,
+      "preco": 86.27,
+      "dy": 13.56,
       "dpa": 11.7,
       "teto_bazin": 195.0
     },
@@ -964,99 +957,99 @@
     },
     "KNSC11": {
       "nome": "KNSC11",
-      "preco": 8.57,
-      "dy": 13.05,
+      "preco": 8.45,
+      "dy": 13.24,
       "dpa": 1.12,
       "teto_bazin": 18.64
     },
     "TGAR11": {
       "nome": "TGAR11",
-      "preco": 31.99,
-      "dy": 27.79,
+      "preco": 30.72,
+      "dy": 28.94,
       "dpa": 8.89,
       "teto_bazin": 148.17
     },
     "RZTR11": {
       "nome": "RZTR11",
-      "preco": 67.49,
-      "dy": 16.82,
+      "preco": 64.24,
+      "dy": 17.67,
       "dpa": 11.35,
       "teto_bazin": 189.17
     },
     "ALZR11": {
       "nome": "ALZR11",
-      "preco": 9.71,
-      "dy": 10.35,
+      "preco": 9.6,
+      "dy": 10.47,
       "dpa": 1.0,
       "teto_bazin": 16.75
     },
     "GGRC11": {
       "nome": "GGRC11",
-      "preco": 8.35,
-      "dy": 14.37,
+      "preco": 8.2,
+      "dy": 14.63,
       "dpa": 1.2,
       "teto_bazin": 20.0
     },
     "VGHF11": {
       "nome": "VGHF11",
-      "preco": 4.01,
-      "dy": 19.7,
+      "preco": 3.83,
+      "dy": 20.63,
       "dpa": 0.79,
       "teto_bazin": 13.17
     },
     "VGIR11": {
       "nome": "VGIR11",
-      "preco": 8.5,
-      "dy": 17.64,
+      "preco": 8.14,
+      "dy": 18.42,
       "dpa": 1.5,
       "teto_bazin": 24.98
     },
     "SNAG11": {
       "nome": "SNAG11",
-      "preco": 9.6,
-      "dy": 16.46,
+      "preco": 9.5,
+      "dy": 16.63,
       "dpa": 1.58,
       "teto_bazin": 26.33
     },
     "KNCA11": {
       "nome": "KNCA11",
-      "preco": 85.71,
-      "dy": 13.32,
+      "preco": 83.6,
+      "dy": 13.66,
       "dpa": 11.42,
       "teto_bazin": 190.33
     },
     "RZAG11": {
       "nome": "RZAG11",
-      "preco": 7.74,
-      "dy": 17.76,
+      "preco": 7.64,
+      "dy": 18.0,
       "dpa": 1.38,
       "teto_bazin": 22.92
     },
     "VGIA11": {
       "nome": "VGIA11",
-      "preco": 8.09,
-      "dy": 19.65,
+      "preco": 7.97,
+      "dy": 19.95,
       "dpa": 1.59,
       "teto_bazin": 26.5
     },
     "FGAA11": {
       "nome": "FGAA11",
-      "preco": 7.66,
-      "dy": 17.82,
+      "preco": 7.6,
+      "dy": 17.96,
       "dpa": 1.36,
       "teto_bazin": 22.75
     },
     "XPCA11": {
       "nome": "XPCA11",
-      "preco": 6.73,
-      "dy": 18.72,
+      "preco": 6.64,
+      "dy": 18.98,
       "dpa": 1.26,
       "teto_bazin": 21.0
     },
     "KFOF11": {
       "nome": "KFOF11",
-      "preco": 73.25,
-      "dy": 13.11,
+      "preco": 71.75,
+      "dy": 13.38,
       "dpa": 9.6,
       "teto_bazin": 160.0
     }
