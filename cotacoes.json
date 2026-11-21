@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "20/11/2026 02:28",
+  "atualizado_em": "21/11/2026 02:39",
   "destaques": [
     "BBAS3",
     "BBSE3",
@@ -61,10 +61,10 @@
     },
     "XSPI11": {
       "nome": "XP S&P 500 Dividendos ETF",
-      "preco": 109.81,
+      "preco": 109.97,
       "dy": 9.8,
-      "dpa": 10.76,
-      "teto_bazin": 179.36
+      "dpa": 10.78,
+      "teto_bazin": 179.62
     },
     "XBCI11": {
       "nome": "XP Crédito Imobiliário ETF",
@@ -132,9 +132,9 @@
     "COIN11": {
       "nome": "COIN11",
       "preco": 37.72,
-      "dy": 34.44,
-      "dpa": 12.99,
-      "teto_bazin": 216.49
+      "dy": 36.56,
+      "dpa": 13.79,
+      "teto_bazin": 229.82
     },
     "ETHY11": {
       "nome": "ETHY11",
@@ -453,10 +453,10 @@
     },
     "RAIZ4": {
       "nome": "RAIZ4",
-      "preco": 16.8,
+      "preco": 15.0,
       "dy": 6.0,
-      "dpa": 1.01,
-      "teto_bazin": 16.8
+      "dpa": 0.9,
+      "teto_bazin": 15.0
     },
     "GGBR4": {
       "nome": "GGBR4",
